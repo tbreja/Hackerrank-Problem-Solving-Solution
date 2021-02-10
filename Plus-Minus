@@ -1,0 +1,34 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    result = []
+    pos_val = 0
+    neg_val = 0
+    zero_val = 0
+    for i in range(n):
+        if arr[i] > 0:
+            pos_val+=1
+        elif arr[i] < 0:
+            neg_val+=1
+        else:
+             zero_val+=1
+    pos_ratio = pos_val/n
+    neg_ratio = neg_val/n
+    zero_ratio = zero_val/n
+    print("%.6f" % pos_ratio)
+    print("%.6f" % neg_ratio)
+    print("%.6f" % zero_ratio)    
+        
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
