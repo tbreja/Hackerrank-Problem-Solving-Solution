@@ -1,3 +1,4 @@
+# Method I
 #!/bin/python3
 
 import math
@@ -32,8 +33,51 @@ if __name__ == '__main__':
     
     for _ in range(n):
         arr.append(list(map(int, input().rstrip().split())))
+    result = diagonalDifference(arr)
+    
+# Method II : 
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'diagonalDifference' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+#
+
+def diagonalDifference(arr):
+    # Write your code here
+    hasil = 0
+    LD = 0
+    RD = 0
+    for i in range(n):
+        LD += arr[i][i]
+        RD += arr[i][n-i-1]
+    hasil = abs(LD - RD)
+    return hasil
+        
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    
+    n = int(input().strip())
+    
+    arr = []
+    
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
 
     result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
 
     fptr.write(str(result) + '\n')
 
